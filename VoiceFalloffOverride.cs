@@ -62,8 +62,6 @@ namespace VoiceFalloffOverride {
 		public const float DEFAULT_VOICE_RANGE = 25;
 		public static float DEFAULT_NEAR_RANGE = 0;
 		public static float DEFAULT_GAIN = 15;
-		public const bool DEFAULT_PA_STATE = false;
-		public const float DEFAULT_PA_RANGE = 100;
 
 		public static bool InitializingWorld { get; set; } = true;
 		#endregion
@@ -73,8 +71,6 @@ namespace VoiceFalloffOverride {
 		public static float VoiceRange { get; set; }
 		public static float VoiceNearRange { get; set; }
 		public static float VoiceGain { get; set; }
-		public static bool PAPassthrough => MelonPreferences.GetEntryValue<bool>("VFO", "PAPassthrough");
-		public static float PADetectRange => MelonPreferences.GetEntryValue<float>("VFO", "PADetectRange");
 		#endregion
 
 		#region MelonLoader Hooks
@@ -84,9 +80,7 @@ namespace VoiceFalloffOverride {
 			MelonPreferences.CreateEntry("VFO", "Distance", DEFAULT_VOICE_RANGE, "Falloff Distance", $"Range in meters where volume reaches 0% Default: {DEFAULT_VOICE_RANGE}");
 			MelonPreferences.CreateEntry("VFO", "NearDistance", DEFAULT_NEAR_RANGE, "Falloff Start Distance", $"Range in meters where volume begins dropping off. Default: {DEFAULT_NEAR_RANGE}");
 			MelonPreferences.CreateEntry("VFO", "Gain", DEFAULT_GAIN, "Gain", $"Gain adjustment. Default: {DEFAULT_GAIN}");
-			MelonPreferences.CreateEntry("VFO", "PAPassthrough", DEFAULT_PA_STATE, $"Allow PA Systems (Experimental). Default: {DEFAULT_PA_STATE}");
-			MelonPreferences.CreateEntry("VFO", "PADetectRange", 100f, "PA Range Threshold", $"Threshold for detecting a public announcement or whole world voice. Default: {DEFAULT_PA_RANGE}");
-
+			
 			VoiceRange = MelonPreferences.GetEntryValue<float>("VFO", "Distance");
 			VoiceNearRange = MelonPreferences.GetEntryValue<float>("VFO", "NearDistance");
 			VoiceGain = MelonPreferences.GetEntryValue<float>("VFO", "Gain");

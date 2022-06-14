@@ -1,40 +1,31 @@
 # Voice Falloff Override
-### A VRChat mod for MelonLoader by Adnezz
+### A VRChat mod for MelonLoader by Adnezz, modified by Xan // Eti
 
-Built against and tested with MelonLoader v0.5.3, and VRChat Build 1171.
+Allows you to personally tweak how far away people have to be before you can hear their voice.
 
-Allows local customization of the distance values on player voices, AKA: the voice falloff distance.  
-Does NOT change how far other players hear voices travel, only changes what you hear.
+Note that unlike Adnezz's copy of the mod, this **does not respect EMM risky function world blacklists.** This fork was designed specifically for individuals that are subject to sensory overload but don't want to mute everyone. Limiting the mod's use directly contradicts its purpose and as such, all limits have been removed.
 
-
-## Background
-I wrote this because I often felt like I was drowning in voices when hanging out in a crowd in VRChat. I can't tell for certain, but it feels like voice localization and falloff has taken a turn for the worse over recent updates. With this mod, I can lower the distance and stay focused on the conversation I'm having with the people immediately around me.
-
-Could also be used for people in particularly large avatars, so they can hear people on the ground.
-
-
+## Use Cases
+- Sometimes voices travel too far and you can't hear your friends over people that are across the room.
+- Sometimes the voices of other players are too loud, and it gives you PTSD of the school lunch room.
+- Sometimes you are using a large avatar and can't hear people on the ground.
 
 ## Requirements
-* MelonLoader v0.5.3
+* MelonLoader v0.5.4
 * UIExpansionKit is recommended.
 
-## Use
+## Configuration
 
-If you have UIExpansionKit, you can enable the mod and change the set falloff distance in the Mod Settings panel in VRChat's settings menu. Pinning the VFO Enabled setting to the Quick Menu allows for ease of enabling and disabling the mod.
+If you have UIExpansionKit, all settings are available to change in the mod config menu. The rolloff minimum distance and maximum distances are configurable, as well as a constant gain factor.
 
-Otherwise, after running VRChat with the mod installed for the first time, you can edit the falloff distance in VRChat/UserData/MelonPreferences.cfg under the VFO header.
-
-This mod will not function in Game worlds or worlds on emmvrc's blacklist. In worlds with the club tag, you may only reduce the falloff range from the world's default, not increase it.
-
+After running VRChat with the mod installed for the first time, you can also edit the falloff distance in VRChat/UserData/MelonPreferences.cfg under the VFO header. You **must** do this if you do not have UIExpansionKit, hence why it is recommended.
 
 ## Credit
-This mod was originally based on dave-kun's [RankVolumeControl](https://github.com/dave-kun/RankVolumeControl) and uses NetworkManagerHooks.cs from Knah's [JoinNotifier](https://github.com/knah/VRCMods/tree/master/JoinNotifier)
-Special thanks to lil-fluff for assistance in tracking down the cause of VFO failing to work in some worlds.
+- Origin: dave-kun's [RankVolumeControl](https://github.com/dave-kun/RankVolumeControl)
+- Code: NetworkManagerHooks.cs from Knah's [JoinNotifier](https://github.com/knah/VRCMods/tree/master/JoinNotifier)
+- Special thanks: lil-fluff (for assistance in tracking down the cause of VFO failing to work in some worlds), Adnezz for original code.
 
+## WARNING: MODS CAN RESULT IN PERMANENT TERMINATION
+All modification of the VRChat client is against the VRChat terms of service, which clearly state that it is a bannable offense. While this mod makes no changes apparent to the server, it is possible for VRC to implement checks against mods changing game code.
 
-
-
-## WARNING
-All modification of the VRChat client is against the VRChat terms of service, and is a potentially bannable offense. Despite the current cease-fire between VRC devs and the modding community, the current state of affairs could change at any time. I have made some effort to ensure that this mod does not change the way the client behaves from the  perspective of VRC Servers in order to minimize risk, but it would be relatively easy for VRChat devs to add in a check for any modification of the client in the future.
-
-So, like any other VRChat mod, **USE AT YOUR OWN RISK.**
+**Use at your own risk.** I am not responsible if you get banned.
